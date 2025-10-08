@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: builtbydada-sync
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DEFAULT_TIMEZONE
+        value: America/New_York
+      - key: DEMO_MODE
+        value: "true"
+      - key: APP_PASSPHRASE
+        value: demo
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://builtbydada-sync.onrender.com/auth/google/callback
